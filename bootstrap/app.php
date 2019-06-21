@@ -65,6 +65,11 @@ $app->singleton(
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+/*Added for auth0*/
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Auth0Middleware::class,
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers

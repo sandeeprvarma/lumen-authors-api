@@ -17,7 +17,7 @@
     $authors->fill(['name'=>'test3', 'email'=>'test3@test.com', 'github'=>'test3', 'twitter'=>'test3', 'location'=>'test3', 'latest_article_published'=>'test3']);
 });
 */
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
   $router->get('authors',  ['uses' => 'AuthorController@showAllAuthors']);
 
   $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
